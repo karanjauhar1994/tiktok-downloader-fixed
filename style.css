@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #ff0050;
+    --secondary-color: #00f2ea;
+    --background-color: #ffffff;
+    --surface-color: #f8f9fa;
+    --text-primary: #121212;
+    --text-secondary: #6c757d;
+    --border-color: #e9ecef;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --gradient: linear-gradient(135deg, #ff0050, #00f2ea);
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #333333;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background-color: var(--surface-color);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-logo h2 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.hero {
+    padding: 120px 0 80px;
+    background: var(--surface-color);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.download-form {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    gap: 1rem;
+}
+
+#video-url {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quick-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.option-btn {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.features {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.footer {
+    background-color: var(--surface-color);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    z-index: 10000;
+}
+
+.notification.error {
+    background-color: #ff4757;
+}
+
+.notification.success {
+    background-color: #2ed573;
+}
+
+@media (max-width: 768px) {
+    .download-form {
+        flex-direction: column;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
